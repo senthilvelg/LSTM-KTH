@@ -6,6 +6,7 @@ base_dir = "/Users/madhuhegde/Downloads/cholec80/"
 phase_gt_dir = base_dir+"phase_annotations/"
 video_dir = base_dir+"videos/"
 image_dir = base_dir+"images/"
+label_dir = base_dir+"labels/"
 import pdb
 video_files = glob.glob(video_dir+"*.mp4")
 
@@ -50,12 +51,19 @@ for video_num, file in enumerate(video_files):
      
      #extract images from videos
      
-     #extract_images(file, image_name)
+     extract_images(file, image_name)
      
      #resize images to 250 x 250. Currently hardcoded to 250 x 250.
      #existing images are overwritten
      resize_images(image_dir+file_name)
      
+     gt_file_name = phase_gt_dir+file_name+"-phase.txt"
+     gt_list = generate_gt_data(gt_file_name)
+     #print(gt_list)
+     gt_label_file = label_dir+file_name+"-label.txt"
+     #print(gt_label_file)
+     with open(gt_label_file, 'w') as handle:
+        handle.writelines(gt_list)
      
      if(video_num >= num_videos-1):
        break       
