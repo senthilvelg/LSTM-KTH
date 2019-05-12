@@ -49,8 +49,8 @@ def load_cholec_data(image_dir, label_dir):
     data_array.append(image) 
   
   data_array = np.array(data_array)
-  print(np.max(data_array[:,:,:,1:100]), np.min(data_array[:,:,:,1:100]))
+  #print(np.max(data_array[:,:,:,1:100]), np.min(data_array[:,:,:,1:100]))
   print(data_array.shape, classes_one_hot.shape)  
-  return(data_array, classes_one_hot.shape)
+  return(data_array, classes_one_hot)
 
 
