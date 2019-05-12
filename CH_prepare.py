@@ -55,7 +55,7 @@ for video_num, file in enumerate(video_files):
      
      #resize images to 250 x 250. Currently hardcoded to 250 x 250.
      #existing images are overwritten
-     resize_images(image_dir+file_name)
+     #resize_images(image_dir+file_name)
      
      gt_file_name = phase_gt_dir+file_name+"-phase.txt"
      gt_list = generate_gt_data(gt_file_name)
