@@ -13,7 +13,7 @@ from sklearn.model_selection import train_test_split
 
 
 
-base_dir = "/Users/madhuhegde/Downloads/cholec80/"
+base_dir = "data/"
 image_dir = base_dir+"images/"
 label_dir = base_dir+"labels/"
 

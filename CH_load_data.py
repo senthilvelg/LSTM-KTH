@@ -8,8 +8,8 @@ import numpy as np
 #image_dir = base_dir+"images/"
 #label_dir = base_dir+"labels/"
 
-class_labels = {"Preparation\n":0, "CalotTriangleDissection\n":1, "ClippingCutting\n":2, 
-           "GallbladderDissection\n":3, "GallbladderPackaging\n":4, "CleaningCoagulation\n":5, "GallbladderRetraction\n":6}
+class_labels = {"Preparation":0, "CalotTriangleDissection":1, "ClippingCutting":2, 
+           "GallbladderDissection":3, "GallbladderPackaging":4, "CleaningCoagulation":5, "GallbladderRetraction":6}
 
 
 def load_cholec_data(image_dir, label_dir):
@@ -26,7 +26,7 @@ def load_cholec_data(image_dir, label_dir):
       #Read extra line that says Frames Phases
       handle.readline()
       for line in handle:
-        class_label = class_labels[line.split('\t')[1]]
+        class_label = class_labels[line.split('\t')[1].strip()]
         classes_array.append(class_label)
         
         
